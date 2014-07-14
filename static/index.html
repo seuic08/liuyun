@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <title>流云-云盘分享聚集</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+        
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+        <!-- CSS code from Bootply.com editor -->
+        
+        <style type="text/css">
+            /* bootstrap 3 helpers */
+
+.navbar-form input, .form-inline input {
+	width:auto;
+}
+
+/* end */
+
+/* custom theme + Bootstrap resets */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+header {
+	min-height:120px;
+  	margin-bottom:5px;
+}
+
+/* only apply sticky columns on wider screens */
+@media (min-width: 1200px) {
+  #sidebar {
+ 	margin-left:15px;
+  }
+
+  #content {
+ 	padding-right:15px;
+  }
+
+  #sidebar.affix-top {
+      position: static;
+  }
+  
+  #sidebar.affix {
+      position: fixed !important;
+      top: 20px;
+      width:200px;
+  }
+
+  #midCol.affix-top {
+      position: static;
+  }
+
+  #midCol.affix-bottom {
+      padding-top:0;
+  }
+  
+  #midCol.affix {
+      position:fixed !important;
+  	  top: 20px;
+  	  width:292px;
+  }
+}
+
+.affix {
+      position:static;
+}
+
+body {
+  font-family: 'Open Sans',Arial,Helvetica,Sans-Serif;
+  font-weight:300;
+  color:#676767;
+  background-color:#efefef;
+}
+
+a,a:hover {
+	color:#77CCDD;
+  	text-decoration:none;
+}
+
+.highlight-bk {
+	background-color:#77CCDD;
+    padding:1px;
+    width:100%;
+}
+
+.highlight {
+	color:#77CCDD;
+}
+  
+h3.highlight  {
+	padding-top:13px;
+    padding-bottom:14px;
+  	border-bottom:2px solid #77CCDD;
+}
+
+.navbar {
+	background-color:#77CCDD;
+  	color:#ffffff;
+  	border-radius:0;
+}
+.navbar-nav > li > a {
+  	color:#fff;
+  	padding-left:20px;
+  	padding-right:20px;
+  	border-left:1px solid #66BBCC;
+}
+.navbar-nav > li:last-child > a {
+  	border-right:1px solid #66BBCC;
+}
+
+.navbar-nav li a:hover {
+  	background-color:#66BBCC;
+}
+
+.navbar-nav > .open > a, .navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+	color: #000;
+  	opacity:.9;
+}
+
+.navbar-brand {
+	color:#fff;
+}
+
+.accordion-group {
+	border-width:0;
+}
+
+.dropdown-menu {
+	min-width: 250px;
+}
+
+.caret {
+	color:#fff;
+}
+
+.navbar-toggle {
+	color:#fff;
+    border-width:0;
+}
+  
+.navbar-toggle:hover {
+	background-color:#fff;
+}
+
+.panel,.panel-heading {
+  	border-radius:0;
+  	border-width:0;
+  	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.09);
+	box-shadow: 0 3px 3px  rgba(0, 0, 0, 0.09);
+}
+
+.thumbnail {
+	margin-bottom:8px;
+	border-radius:0;
+}
+
+.well {
+  	border-radius:0;
+}
+
+.accordion-heading .accordion-toggle, .accordion-inner, .nav-stacked li > a {
+	padding-left:1px;
+}
+
+footer {
+	height:50px;
+  	background-color:#dfdfdf;
+  	color:#888;
+  	margin-top:20px;
+}
+
+@media (min-width: 992px) {
+  .no-gutter.row > div[class*='col-md'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .no-gutter.row > .col-md-12 {
+    width: 99.99999999999999%;
+    *width: 99.93055555555554%;
+  }
+  .no-gutter.row .col-md-11 {
+    width: 91.66666666666666%;
+    *width: 91.59722222222221%;
+  }
+  .no-gutter.row > .col-md-10 {
+    width: 83.33333333333331%;
+    *width: 83.26388888888887%;
+  }
+  .no-gutter.row > .col-md-9 {
+    width: 74.99999999999999%;
+    *width: 74.93055555555554%;
+  }
+  .no-gutter.row > .col-md-8 {
+    width: 66.66666666666666%;
+    *width: 66.59722222222221%;
+  }
+  .no-gutter.row > .col-md-7 {
+    width: 58.33333333333333%;
+    *width: 58.263888888888886%;
+  }
+  .no-gutter.row > .col-md-6 {
+    width: 49.99999999999999%;
+  }
+  .no-gutter.row > .col-md-4 {
+    width: 33.33333333333333%;
+  }
+  .no-gutter.row > .col-md-3 {
+    width: 24.999999999999996%;
+    *width: 24.930555555555554%;
+  }
+  .no-gutter.row > .col-md-2 {
+    width: 16.666666666666664%;
+    *width: 16.59722222222222%;
+  }
+  .no-gutter.row > .col-md-1 {
+    width: 8.333333333333332%;
+    *width: 8.263888888888888%;
+  }
+}
+
+.alpha {
+	font-size: 14px;
+	position: relative;
+	top: -15px;
+}
+
+h4 {
+	font-size: 16px!important;
+}
+
+h4 > a,a:hover {
+	color: #dc7962;
+}
+
+/* end custom theme */
+        </style>
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+    <body  >
+        
+        <!-- Begin Navbar -->
+<div class="navbar navbar-static">
+   <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" target="ext"><b>流云</b></a>
+      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </a>
+    </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">  
+          <li><a href="#">许愿墙</a></li>
+          <li><a href="#">关于我</a></li>
+        </ul>
+        <ul class="nav pull-right navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+            <ul class="dropdown-menu" style="padding:12px;">
+                <form class="form-inline">
+     				<button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+                </form>
+             </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">注册</a></li>
+              <li><a href="#">登录</a></li>
+             </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div><!-- /.navbar -->
+
+<header class="masthead">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1><a href="#" title="Scroll down for your viewing pleasure">流云<span class="alpha">alpha</a>
+          <p class="lead">南北各万里，有云心更闲。因风离海上，伴月到人间。</p></h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Begin Body -->
+<div class="container">
+	<div class="no-gutter row">
+      		<!-- left side column -->
+  			<div class="col-md-2">
+              	<div class="panel panel-default" id="sidebar">
+                <div class="panel-heading" style="background-color:#888;color:#fff;">分类浏览</div> 
+                <div class="panel-body">
+                <div class="accordion" id="accordion2">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                来源网站
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="accordion-body collapse in">
+                            <div class="accordion-inner">
+							<ul class="taglist">
+                                <li><a href="#">虎扑论坛</a></li>
+								<li><a href="#">水木社区</a></li>
+								<li><a href="#">豆瓣</a></li>
+							</ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                    排序
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="accordion-body collapse in">
+                                <div class="accordion-inner">
+								<ul class="taglist">
+									<li><a href="#">时间</a></li>
+									<li><a href="#">评分</a></li>
+									<li><a href="#">人气</a></li>
+								</ul>
+                                </div>
+                            </div>
+                        </div>
+               	</div><!--/acc-->
+                  
+                  <hr>
+
+                <div class="col col-span-12">
+                </div>
+                
+                </div><!--/panel body-->
+              </div><!--/panel-->
+      		</div><!--/end left column-->
+      		
+      		
+      		<!-- right content column-->
+      		<div class="col-md-10" id="content">
+            	<div class="panel">
+    			<div class="panel-heading" style="background-color:#111;color:#fff;">最新分享</div>   
+              	<div class="panel-body">
+                  <h4><a href="http://bbs.hupu.com">福利来啦你们要的 情人节适合情侣一起看的电影 - 步行街 - 虎扑篮球论坛 <span class="badge">2</span></a></h4>
+              	SILK LABO系列更全版: http://pan.baidu.com/s/1sjATipR 密: scd2 ... SILK LABO系列更全版: http://pan.baidu.com/s/1sjATipR 密: scd2 ...
+
+                <hr>
+              	
+                <h4><a>度盘分享第一帖 - 步行街 - 虎扑篮球论坛 <span class="badge">23</span></a></h4>
+				微软WinXP Win7 Win8 Win8.1原版系统下载大全http://pan.baidu.com/s/1pJ575VX. 超全PS教程+软件+海量PSD以及素材+字体合集+插件滤镜. 
+				
+                <hr>
+              
+              	<h4><a>超级福利，宅男的贴吧之旅! 我和我的的小伙伴们都惊呆了！！ - 可能最专注的福利 - 虎扑篮球论坛 <span class="badge">1</span></a></h4>
+      			平胸吧_百度贴吧http://tieba.baidu.com/f?tp=0&kw=%C6%BD%D0%D8. 骚妞妞吧_百度 .... http://pan.baidu.com/s/1CGhbW. 密码：w4qh.
+                <hr>
+                
+              	<h4><a>北京春晚《满腹经纶》 原版， 可能是近几年最好的一个相声 - 可能最专注的福利 - 虎扑篮球论坛 <span class="badge">2</span></a></h4>
+      			快回防，仙道要攻过来了！ 灌篮高手150G资源网盘链接： http://pan.baidu.com/s/17pcXb. yinsr1979 (36级) 2014-02-01 19:18 亮了 (0). 265楼 ...
+                <hr>
+                
+              	<h4><a>分享個林志炫的音乐全集给大家，有同样的知音拿去吧 - 音乐区 - 虎扑篮球论坛 <span class="badge">3</span></a></h4>
+      			http://pan.baidu.com/share/link?shareid=440258&uk=202949149 · http://pan.baidu.com/share/link?shareid=440259&uk=202949149 ...
+             	
+				<hr>
+				<h4><a>分享個林志炫的音乐全集给大家，有同样的知音拿去吧 - 音乐区 - 虎扑篮球论坛 <span class="badge">3</span></a></h4>
+      			http://pan.baidu.com/share/link?shareid=440258&uk=202949149 · http://pan.baidu.com/share/link?shareid=440259&uk=202949149 ...
+             	
+				<hr>
+				<h4><a>分享個林志炫的音乐全集给大家，有同样的知音拿去吧 - 音乐区 - 虎扑篮球论坛 <span class="badge">3</span></a></h4>
+      			http://pan.baidu.com/share/link?shareid=440258&uk=202949149 · http://pan.baidu.com/share/link?shareid=440259&uk=202949149 ...
+             	
+				<hr>
+				<h4><a>分享個林志炫的音乐全集给大家，有同样的知音拿去吧 - 音乐区 - 虎扑篮球论坛 <span class="badge">3</span></a></h4>
+      			http://pan.baidu.com/share/link?shareid=440258&uk=202949149 · http://pan.baidu.com/share/link?shareid=440259&uk=202949149 ...
+             	
+				<hr>
+				<h4><a>分享個林志炫的音乐全集给大家，有同样的知音拿去吧 - 音乐区 - 虎扑篮球论坛 <span class="badge">3</span></a></h4>
+      			http://pan.baidu.com/share/link?shareid=440258&uk=202949149 · http://pan.baidu.com/share/link?shareid=440259&uk=202949149 ...
+             	
+				<hr>
+				<h4><a>分享個林志炫的音乐全集给大家，有同样的知音拿去吧 - 音乐区 - 虎扑篮球论坛 <span class="badge">3</span></a></h4>
+      			http://pan.baidu.com/share/link?shareid=440258&uk=202949149 · http://pan.baidu.com/share/link?shareid=440259&uk=202949149 ...
+             	
+				<hr>
+				<h4><a>分享個林志炫的音乐全集给大家，有同样的知音拿去吧 - 音乐区 - 虎扑篮球论坛 <span class="badge">3</span></a></h4>
+      			http://pan.baidu.com/share/link?shareid=440258&uk=202949149 · http://pan.baidu.com/share/link?shareid=440259&uk=202949149 ...
+             	
+				<hr>
+                
+             	<ul class="pagination" align="center">
+				  <li><a href="#">&laquo;</a></li>
+				  <li><a href="#">1</a></li>
+				  <li><a href="#">2</a></li>
+				  <li><a href="#">3</a></li>
+				  <li><a href="#">4</a></li>
+				  <li><a href="#">5</a></li>
+				  <li><a href="#">&raquo;</a></li>
+				</ul>
+                  </div><!--/panel-body-->
+                </div><!--/panel-->
+              	<!--/end right column-->
+      	</div> 
+  	</div>
+</div>
+<footer>
+  <div class="container">
+  	<div class="row">
+    	<div class="col-md-6">©LiuYun 2014</div>
+    </div>
+  </div>
+</footer>
+
+
+        
+        <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+        <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+
+
+
+
+
+        
+        <!-- JavaScript jQuery code from Bootply.com editor -->
+        
+        <script type='text/javascript'>
+        
+        $(document).ready(function() {
+        
+            $('#sidebar').affix({
+      offset: {
+        top: 230,
+        bottom: 100
+      }
+});	
+$('#midCol').affix({
+      offset: {
+        top: 230,
+        bottom: 100
+      }
+});	
+        
+        });
+        
+        </script>
+        
+    </body>
+</html>
